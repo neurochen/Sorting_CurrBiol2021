@@ -1,0 +1,159 @@
+         
+                                  MWMP
+                         Multiwavelet MATLAB Package
+
+Author: Vasily Strela  
+        strela@math.dartmouth.edu
+        http://math.dartmouth.edu/~strela
+
+MWMP is a library of Matlab 5 routines for multiwavelet analysis. Its aim
+is to give researchers an opportunity to try multiwavelets in practice. 
+MWMP can be used for comparison of scalar and multiple filters
+in image compression and signal denoising.
+
+MWMP offers a variety of builtin scalar- and multi- filters (all filters are
+considered to be matrix). Several types of prefilters are included.
+For  descriptions of available filters and their properties see functions
+coef and coef_prep. New sets of coefficients can be easily added.
+
+In addition to routines implementing preprocessing and discrete multiwavelet 
+transform (in 1 and 2 dimensions) the package contains a simple compression 
+function and several scripts for signal denoising via thresholding. 
+For description of multiwavelet thresholding methods see reference [SW] below.
+There also is a routine which plots multiscaling and multiwavelet functions
+and a routine which computes the transition operator.
+
+All scripts  in MWMP start with a help section describing input and output 
+parameters and giving an example of usage. Often there are references
+to the literature from the list below. Function example1D demonstrates
+how to use the transform functions. More complicated examples
+can be found in scripts simpcomp2D (image compression via retaining given 
+number of largest coefficients) and th2D (denoising via thresholding).
+
+To install the package on a UNIX machine:
+  1. Download the archive MWMP.tar.gz from 
+     http://math.dartmouth.edu/~strela/MWMP 
+  2. Uncompress the archive
+  3. Create a directory and move uncompressed archive there
+  4. tar -xvf MWMP.tar
+  5. Modify your Matlab path to include the directory
+
+To install the package on a DOS machine:
+  1. Download the archive MWMP.zip from 
+     http://math.dartmouth.edu/~strela/MWMP
+  2. Create a directory and move compressed archive there
+  4. pkunzip MWMP.zip
+  5. Modify your Matlab path to include the directory
+
+All files are also available in ASCII format at
+http://math.dartmouth.edu/~strela/MWMP/MWMP-SOURCE
+
+To view the list and short descriptions of all available routines, 
+start  Matlab 5 and type
+
+  help MWMP_list
+
+To obtain more information on a specific _function_ (including description
+of input and output parameters, example of usage), type
+
+  help _function_
+
+In order to speed up the computations we recommend to compile routines 
+in to mex files using Matlab function mcc.
+
+Please send your questions, comments, and corrections to Vasily Strela
+
+strela@math.dartmouth.edu
+
+
+
+Acknowledgments:
+
+This software was partially developed while Vasily Strela was with the
+Statistics Section, Imperial College of Science, Technology and Medicine 
+supported by EPSRC grant GR/L11182. Author is very grateful for this support.
+
+Thanks to Fritz Keinert for providing precise coefficients for 'la8'
+and 'bi7'.
+
+LIST OF LITERATURE:
+
+[CL]  C. K. Chui and J. A. Lian, "A study of orthonormal multiwavelets",
+      Texas A&M University CAT Report 351 (1995).
+
+[D]   I. Daubechies, "Ten Lectures on Wavelets", SIAM, Philadelphia (1992).
+
+[DJ]  D. L. Donoho and I. M. Johnstone, "Ideal spatial adaptation by
+      wavelet shrinkage", Biometrica 81 (1994) 425-455.
+
+[DS]  T. R. Downie and B. W. Silverman, "The discrete multiple wavelet
+      transform and thresholding methods", IEEE Trans. on SP, to appear.
+
+[GHM] J. S. Geronimo, D. P. Hardin, and P. R. Massopust, "Fractal functions and
+      wavelet expansions based on several functions", J. Approx. Theory 
+      78 (1994) 373-401.
+
+[HR]  D. P. Hardin and D. W. Roach, "Multiwavelet prefilters I: 
+      Orthogonal prefilters preserving approximation order p <= 2",
+      preprint (1997).
+
+[HSS] C. Heil, G. Strang, and V. Strela, "Approximation by translates of 
+      refinable functions",  Numerische Mathematik 73 (1996) 75-94. 
+
+[J]   Q. Jiang, "On the regularity of matrix refinable functions",
+      SIAM J. Math. Anal., to appear.
+
+[Se]  I. Selesnick, "Cardinal Multiwavelets and the Sampling Theorem",
+      prerprint (1998).
+
+[STT] L.-X. Shen, H. H. Tan, and J. Y. Tham, "Symmetric-antisymmetric 
+      orthonormal multiwavelets and related scalar wavelets", 
+      preprint (1997).
+
+[SS]  G. Strang and V. Strela, "Short wavelets and matrix dilation equations", 
+      IEEE Trans. on SP 43 (1995) 108-115.
+
+[S]   V. Strela, "A note on Construction of biorthogonal multi-scaling 
+      functions", in Contemporary Mathematics, A. Aldroubi and 
+      E. B. Lin (eds.), AMS (1998) 149-157. 
+
+[SHSTH] V. Strela, P. Heller, G. Strang, P. Topiwala, and C. Heil,
+        "The application of multiwavelet filter banks to signal and 
+        image processing", IEEE Trans. on Image Proc. (1998).  
+
+[SW]  V. Strela and A. T. Walden, "Signal and Image Denoising via Wavelet 
+      Thresholding: Orthogonal and Biorthogonal, Scalar and Multiple Wavelet 
+      Transforms", Imperial College, Statistics Section, 
+      Technical Report TR-98-01 (1998).
+
+[SW1] V. Strela and A. T. Walden, "Orthogonal and biorthogonal multiwavelets 
+      for signal denoising and image compression", SPIE Proc. 3391 
+      AeroSense 98, Orlando, Florida, April 1998.
+
+[TS]  R. Turcajova and V. Strela, " Smooth Hermite spline multiwavelets",
+      in preparation.
+
+[XGHS] X.-G. Xia, J. S. Geronimo, D. P. Hardin, and B. W. Suter, 
+       "Design of prefilters for discrete multiwavelet transforms",
+       IEEE Trans. on SP, 44 (1996) 25-35.
+       
+附注：对于2-D的对小波变换，首先要进行预滤波，将信号变成可以进行多小波变换的格式，
+      然后再进行多小波变换，这时可以将分解的图画出，从图中可以看到分解后的频带分
+      布，如果要将分解后的信号进行重构的话，要先对分解后的子频带进行后滤波。然后
+      才能进行重构。
+      进行多小波变换的一个主要问题在于预滤波的设计。如果预滤波的设计不好会影响多
+      小波变换的效果。
+      如果对多小波进行平衡处理的话，不要进行预滤波，它只要对信号变成它所能够处理
+      的格式，这种处理方法只要取单位矩阵I就可以了。
+      这里的平衡多小波变换没有点问题。
+      'clbal'平衡多小波可能有问题。'clghm'平衡多小波也可能有问题。（平衡化有问题）
+      
+      注意：要再添加一个多小波，那最优的多小波，它有最小的时频分辨力。
+
+      这样，对于去躁与压缩主要在于对分解后的频带进行处理。
+
+
+
+
+
+
