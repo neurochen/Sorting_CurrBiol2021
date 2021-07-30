@@ -1,8 +1,7 @@
 function [Class Model] = tdistEM(Input, PenaltyFactor)
 % t-distribution EM proposed by Shy Shoham, J Neurosci Methods2003
 % Adapted from SAC by Shy Shoham
-% [~, Input] = princomp(Input);
-% Input = Input(:,1:3);
+
 % Initialization
 Method = 't';
 [NumRow NumCol] = size(Input);
